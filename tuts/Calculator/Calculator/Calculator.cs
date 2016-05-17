@@ -25,6 +25,10 @@ namespace Calculator
 
         public double Divide(int value, int by)
         {
+            if (value > 200) // for demo purpose
+            {
+                throw new ArgumentOutOfRangeException("value");
+            }
             return value / by;
         }
     }
