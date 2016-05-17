@@ -59,7 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssertingNullBools.cs" />
+    <Compile Include="AssertingCollections.cs" />
+    <Compile Include="AssertingNullsBools.cs" />
     <Compile Include="AssertingStringResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

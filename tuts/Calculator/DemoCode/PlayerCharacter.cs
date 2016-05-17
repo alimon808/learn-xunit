@@ -14,7 +14,14 @@ namespace DemoCode
 
         private void CreateStartingWeapon()
         {
-            // todo 
+            Weapons = new List<string>()
+            {
+                "Long Bow",
+                "Short Bow",
+                "Short Sword",
+
+                // "Staff Of Wander"
+            };
         }
 
         public int Health { get; set; }
