@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="AssertingCollections.cs" />
     <Compile Include="AssertingNullsBools.cs" />
+    <Compile Include="AssertingRanges.cs" />
     <Compile Include="AssertingStringResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

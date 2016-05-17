@@ -12,6 +12,21 @@ namespace DemoCode
             CreateStartingWeapon();
         }
 
+        public int Health { get; set; }
+        public string Name { get; set; }
+        public string NickName { get; set; }
+        public bool IsNoob { get; set; }
+        public List<string> Weapons { get; set; }
+
+        public void Sleep()
+        {
+            var rnd = new Random();
+
+            var healthIncrease = rnd.Next(1, 101);
+
+            Health += healthIncrease;
+        }
+
         private void CreateStartingWeapon()
         {
             Weapons = new List<string>()
@@ -23,13 +38,6 @@ namespace DemoCode
                 // "Staff Of Wander"
             };
         }
-
-        public int Health { get; set; }
-        public string Name { get; set; }
-        public string NickName { get; set; }
-        public bool IsNoob { get; set; }
-        public List<string> Weapons { get; set; }
-
 
         private string GenerateName()
         {
