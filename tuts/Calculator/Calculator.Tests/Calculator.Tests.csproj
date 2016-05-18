@@ -62,6 +62,7 @@
     <Compile Include="AssertingExceptions.cs" />
     <Compile Include="AssertingNumericResults.cs" />
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="MemoryCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
