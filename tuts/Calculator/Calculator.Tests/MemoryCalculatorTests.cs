@@ -4,17 +4,17 @@ using Xunit.Abstractions;
 
 namespace Calculator.Tests
 {
-    public class MemoryCalculatorTests : IDisposable
+    public class MemoryCalculatorTests : IClassFixture<MemoryCalculatorFixture>
     {
         private readonly ITestOutputHelper _testOutput;
-        private MemoryCalculator _sut;
+        private readonly MemoryCalculatorFixture _fixture;
 
-        public MemoryCalculatorTests(ITestOutputHelper helper)
+        public MemoryCalculatorTests(ITestOutputHelper helper, MemoryCalculatorFixture fixture)
         {
             _testOutput = helper;
+            _fixture = fixture;
 
-            _testOutput.WriteLine("Creating sut");
-            _sut = new MemoryCalculator();
+            _fixture.Sut.Clear();
         }
 
         [Fact]
@@ -22,10 +22,10 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldAdd");
 
-            _sut.Add(10);
-            _sut.Add(5);
+            _fixture.Sut.Add(10);
+            _fixture.Sut.Add(5);
 
-            Assert.Equal(15, _sut.CurrentValue);
+            Assert.Equal(15, _fixture.Sut.CurrentValue);
         }
 
         [Fact]
@@ -33,9 +33,9 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldSubtract");
 
-            _sut.Subtract(5);
+            _fixture.Sut.Subtract(5);
 
-            Assert.Equal(-5, _sut.CurrentValue);
+            Assert.Equal(-5, _fixture.Sut.CurrentValue);
         }
 
         [Fact]
@@ -43,16 +43,11 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldDivide");
 
-            _sut.Add(10);
-            _sut.Divide(2);
+            _fixture.Sut.Add(10);
+            _fixture.Sut.Divide(2);
 
-            Assert.Equal(5, _sut.CurrentValue);
+            Assert.Equal(5, _fixture.Sut.CurrentValue);
         }
-
-        public void Dispose()
-        {
-            _testOutput.WriteLine("Disposing sut");
-            _sut.Dispose();
-        }
+        
     }
 }
