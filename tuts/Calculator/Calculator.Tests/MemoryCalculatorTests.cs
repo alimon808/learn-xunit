@@ -1,15 +1,20 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace Calculator.Tests
 {
-    public class MemoryCalculatorTests
+    public class MemoryCalculatorTests : IDisposable
     {
         private readonly ITestOutputHelper _testOutput;
+        private MemoryCalculator _sut;
 
         public MemoryCalculatorTests(ITestOutputHelper helper)
         {
             _testOutput = helper;
+
+            _testOutput.WriteLine("Creating sut");
+            _sut = new MemoryCalculator();
         }
 
         [Fact]
@@ -17,13 +22,10 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldAdd");
 
-            using (var sut = new MemoryCalculator())
-            {
-                sut.Add(10);
-                sut.Add(5);
+            _sut.Add(10);
+            _sut.Add(5);
 
-                Assert.Equal(15, sut.CurrentValue);
-            }
+            Assert.Equal(15, _sut.CurrentValue);
         }
 
         [Fact]
@@ -31,12 +33,9 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldSubtract");
 
-            using (var sut = new MemoryCalculator())
-            {
-                sut.Subtract(5);
+            _sut.Subtract(5);
 
-                Assert.Equal(-5, sut.CurrentValue);
-            }
+            Assert.Equal(-5, _sut.CurrentValue);
         }
 
         [Fact]
@@ -44,13 +43,16 @@ namespace Calculator.Tests
         {
             _testOutput.WriteLine("Executing ShouldDivide");
 
-            using (var sut = new MemoryCalculator())
-            {
-                sut.Add(10);
-                sut.Divide(2);
+            _sut.Add(10);
+            _sut.Divide(2);
 
-                Assert.Equal(5, sut.CurrentValue);
-            }
+            Assert.Equal(5, _sut.CurrentValue);
+        }
+
+        public void Dispose()
+        {
+            _testOutput.WriteLine("Disposing sut");
+            _sut.Dispose();
         }
     }
 }
