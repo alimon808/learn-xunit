@@ -37,3 +37,5 @@ using Xunit;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 //[assembly: CollectionBehavior(CollectionBehavior.CollectionPerAssembly)]
+
+[assembly: TestCollectionOrderer("Calculator.Tests.AlphabeticCollectionOrderer", "Calculator.Tests")]

@@ -2,6 +2,7 @@
 
 namespace Calculator.Tests
 {
+    [Collection("Zeta")]
     public class MemoryCalculatorAddTests
     {
         
@@ -16,15 +17,15 @@ namespace Calculator.Tests
             Assert.Equal(15, sut.CurrentValue);
         }
 
-        [Fact]
-        public void ShouldAddNegativeNumbers()
-        {
-            var sut = new MemoryCalculator();
+        //[Fact]
+        //public void ShouldAddNegativeNumbers()
+        //{
+        //    var sut = new MemoryCalculator();
 
-            sut.Add(-5);
-            sut.Add(-5);
+        //    sut.Add(-5);
+        //    sut.Add(-5);
 
-            Assert.Equal(-10, sut.CurrentValue);
-        }
+        //    Assert.Equal(-10, sut.CurrentValue);
+        //}
     }
 }

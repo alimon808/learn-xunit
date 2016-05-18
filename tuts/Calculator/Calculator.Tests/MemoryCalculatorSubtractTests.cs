@@ -14,14 +14,14 @@ namespace Calculator.Tests
             Assert.Equal(-5, sut.CurrentValue);
         }
 
-        [Fact]
-        public void ShouldSubtractNegativeNumbers()
-        {
-            var sut = new MemoryCalculator();
+        //[Fact]
+        //public void ShouldSubtractNegativeNumbers()
+        //{
+        //    var sut = new MemoryCalculator();
 
-            sut.Subtract(-5);
+        //    sut.Subtract(-5);
 
-            Assert.Equal(5, sut.CurrentValue);
-        }
+        //    Assert.Equal(5, sut.CurrentValue);
+        //}
     }
 }

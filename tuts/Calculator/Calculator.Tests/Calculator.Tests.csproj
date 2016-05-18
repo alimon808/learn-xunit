@@ -61,7 +61,9 @@
   <ItemGroup>
     <Compile Include="AssertingExceptions.cs" />
     <Compile Include="AssertingNumericResults.cs" />
+    <Compile Include="CalculatorCustomOrderer.cs" />
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="MemoryCalculatorDivideTests.cs" />
     <Compile Include="MemoryCalculatorCollection.cs" />
     <Compile Include="MemoryCalculatorSubtractTests.cs" />
     <Compile Include="MemoryCalculatorAddTests.cs" />
