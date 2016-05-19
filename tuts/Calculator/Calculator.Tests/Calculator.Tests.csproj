@@ -68,6 +68,7 @@
     <Compile Include="MemoryCalculatorSubtractTests.cs" />
     <Compile Include="MemoryCalculatorAddTests.cs" />
     <Compile Include="MemoryCalculatorFixture.cs" />
+    <Compile Include="MemoryCalculatorDataDrivenTests.cs" />
     <Compile Include="MemoryCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
