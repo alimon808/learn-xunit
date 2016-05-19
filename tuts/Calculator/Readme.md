@@ -1,6 +1,6 @@
 # Xunit
 
-## Pluralsight course by Jaso Roberts
+## Pluralsight course by Jason Roberts
 ### Modules
 Data Driven Tests
 - Benefits
