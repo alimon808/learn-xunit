@@ -1,17 +1,24 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Calculator.Tests
 {
     public class MemoryCalculatorDataDrivenTests
     {
+        public static IEnumerable<object[]> TestData
+        {
+            get
+            {
+                yield return new object[] {5, 10, -15 };
+                yield return new object[] {-5, -10, 15 };
+                yield return new object[] {10, 0, -10 };
+                yield return new object[] {0, 0, 0 };
+                yield return new object[] {-99, 99, 0 };
+            }
+        }
+
         [Theory]
-        [InlineData(5, 10, -15)]
-        [InlineData(-5,-10, 15)]
-        [InlineData(10, 0, -10)]
-        [InlineData(0, 0, 0)]
-        [InlineData(-99, 99, 0)]
+        [MemberData("TestData")]
         public void ShouldSubtractTwoNumbers(int firstNumber, int secondNumber, int expectedResult)
         {
 
