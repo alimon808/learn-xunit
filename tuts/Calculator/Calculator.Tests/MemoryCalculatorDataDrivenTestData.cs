@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Xunit;
 
 namespace Calculator.Tests
@@ -9,11 +11,18 @@ namespace Calculator.Tests
         {
             get
             {
-                yield return new object[] { 5, 10, -15 };
-                yield return new object[] { -5, -10, 15 };
-                yield return new object[] { 10, 0, -10 };
-                yield return new object[] { 0, 0, 0 };
-                yield return new object[] { -99, 99, 0 };
+                string[] csvLines = File.ReadAllLines("TestData.csv");
+                var testCases = new List<object[]>();
+
+                foreach (var csvLine in csvLines)
+                {
+
+                    IEnumerable<int> values = csvLine.Split(',').Select(int.Parse);
+                    object[] testCase = values.Cast<object>().ToArray();
+                    testCases.Add(testCase);
+                }
+
+                return testCases;
             }
         }
     }
