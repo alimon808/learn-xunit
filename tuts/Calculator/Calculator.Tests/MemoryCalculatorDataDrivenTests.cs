@@ -6,7 +6,7 @@ namespace Calculator.Tests
     public class MemoryCalculatorDataDrivenTests
     {
         [Theory]
-        [MemberData("TestData", MemberType = typeof(MemoryCalculatorDataDrivenTestData))]
+        [CsvTestData("TestData.csv")]
         public void ShouldSubtractTwoNumbers(int firstNumber, int secondNumber, int expectedResult)
         {
             var sut = new MemoryCalculator();
