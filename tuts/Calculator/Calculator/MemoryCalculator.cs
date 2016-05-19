@@ -14,7 +14,7 @@ namespace Calculator
         public MemoryCalculator()
         {
             // simulate expensive object creation
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+            //Thread.Sleep(TimeSpan.FromSeconds(5));
         }
 
         public void Add(int number)
