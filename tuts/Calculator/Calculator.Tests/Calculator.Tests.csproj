@@ -63,6 +63,7 @@
     <Compile Include="AssertingNumericResults.cs" />
     <Compile Include="CalculatorCustomOrderer.cs" />
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="MemoryCalculatorDataDrivenTestData.cs" />
     <Compile Include="MemoryCalculatorDivideTests.cs" />
     <Compile Include="MemoryCalculatorCollection.cs" />
     <Compile Include="MemoryCalculatorSubtractTests.cs" />
