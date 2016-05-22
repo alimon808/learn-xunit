@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Demographics.cs" />
+    <Compile Include="Entities\Favorite.cs" />
     <Compile Include="Entities\Interest.cs" />
     <Compile Include="Entities\InterestType.cs" />
     <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Entities\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

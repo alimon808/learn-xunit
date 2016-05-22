@@ -6,53 +6,65 @@ namespace DateMePlease.Tests
 {
     public class MemberTests
     {
+        private Member _sut;
+
+        public MemberTests()
+        {
+            _sut = new Member();
+        }
         [Fact]
         public void ShouldHaveIdAsInt()
         {
-            var sut = new Member();
-
-            Assert.IsType<int>(sut.Id);
+            Assert.IsType<int>(_sut.Id);
         }
 
         [Fact]
         public void ShouldHaveUsernameAsString()
         {
-            var sut = new Member();
+            Assert.Equal(null, _sut.Username);
 
-            Assert.Equal(null, sut.Username);
+            _sut.Username = "jsmith";
 
-            sut.Username = "jsmith";
-
-            Assert.IsType<string>(sut.Username);
+            Assert.IsType<string>(_sut.Username);
         }
 
         [Fact]
         public void ShouldHaveLastLoginAsDateTime()
         {
-            var sut = new Member();
-
-            Assert.IsType<DateTime>(sut.LastLogin);
+            Assert.IsType<DateTime>(_sut.LastLogin);
         }
 
 
         [Fact]
         public void ShouldHaveCreatedAsDateTime()
         {
-            var sut = new Member();
-
-            Assert.IsType<DateTime>(sut.Created);
+            Assert.IsType<DateTime>(_sut.Created);
         }
 
         [Fact]
         public void ShouldHaveProfileAsProfile()
         {
-            var sut = new Member();
+            Assert.Equal(null, _sut.Profile);
 
-            Assert.Equal(null, sut.Profile);
+            _sut.Profile = new Profile();
 
-            sut.Profile = new Profile();
+            Assert.IsType<Profile>(_sut.Profile);
+        }
 
-            Assert.IsType<Profile>(sut.Profile);
+        [Fact]
+        public void ShouldHaveMessagesAsCollection()
+        {
+            Assert.Equal(null, _sut.Messages);
+
+            _sut.Messages = new[] { new Message(), new Message() };
+
+            Assert.Equal(2, _sut.Messages.Count);
+        }
+
+        [Fact]
+        public void ShouldHaveFavoritesAsCollection()
+        {
+            Assert.Equal(null, _sut.Favorites);
         }
     }
 }

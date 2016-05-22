@@ -14,5 +14,8 @@ namespace DateMePlease.Entities
         public DateTime Created { get; set; }
 
         public Profile Profile { get; set; }
+
+        public ICollection<Message> Messages { get; set; }
+        public IEnumerable<Favorite> Favorites { get; set; }
     }
 }
