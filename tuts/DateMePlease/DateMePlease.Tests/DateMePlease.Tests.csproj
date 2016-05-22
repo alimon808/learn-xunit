@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DemographicsTests.cs" />
+    <Compile Include="PhotoTests.cs" />
+    <Compile Include="InterestTypeTests.cs" />
+    <Compile Include="InterestTests.cs" />
     <Compile Include="ProfileTests.cs" />
     <Compile Include="MemberTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

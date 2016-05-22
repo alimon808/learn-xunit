@@ -71,5 +71,17 @@ namespace DateMePlease.Tests
             sut.Demographics = new Demographics();
             Assert.IsType<Demographics>(sut.Demographics);
         }
+
+
+        [Fact]
+        public void ShouldHaveInterestsAsCollection()
+        {
+            var sut = new Profile();
+
+            Assert.Equal(null, sut.Interests);
+            sut.Interests = new[] { new Interest(), new Interest() };
+
+            Assert.Equal(2, sut.Interests.Count);
+        }
     }
 }

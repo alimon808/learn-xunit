@@ -1,4 +1,6 @@
-﻿namespace DateMePlease.Entities
+﻿using System.Collections.Generic;
+
+namespace DateMePlease.Entities
 {
     public class Profile
     {
@@ -11,5 +13,9 @@
         public Member Member { get; set; }
 
         public Demographics Demographics { get; set; }
+
+        public ICollection<Interest> Interests { get; set; }
+
+        public ICollection<Photo> Photos { get; set; }
     }
 }
