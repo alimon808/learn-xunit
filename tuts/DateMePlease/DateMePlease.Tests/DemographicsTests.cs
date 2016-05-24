@@ -15,6 +15,31 @@ namespace DateMePlease.Tests
         }
 
         [Fact]
+        public void ShouldHaveOrientationAsString()
+        {
+            var sut = new Demographics();
+
+            Assert.Equal(null, sut.Orientation);
+
+            sut.Orientation = "Bisexual";
+
+            Assert.Equal("Bisexual", sut.Orientation);
+        }
+
+        [Fact]
+        public void ShouldHaveGenderAsString()
+        {
+
+            var sut = new Demographics();
+
+            Assert.Equal(null, sut.Gender);
+
+            sut.Gender = "Male";
+
+            Assert.Equal("Male", sut.Gender);
+        }
+
+        [Fact]
         public void ShouldHaveAddressLineAsString()
         {
             var sut = new Demographics();

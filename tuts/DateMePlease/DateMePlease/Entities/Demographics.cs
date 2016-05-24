@@ -6,6 +6,9 @@ namespace DateMePlease.Entities
     {
         public int Id { get; set; }
 
+        public string Orientation { get; set; }
+        public string Gender { get; set; }
+
         public string AddressLine { get; set; }
         public string CityTown { get; set; }
         public string StateProvince { get; set; }

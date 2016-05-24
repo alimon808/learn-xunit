@@ -29,6 +29,15 @@ namespace DateMePlease.Tests
         }
 
         [Fact]
+        public void ShouldHaveMemberNameAsString()
+        {
+            Assert.Equal(null, _sut.MemberName);
+
+            _sut.MemberName = "jsmith";
+
+            Assert.IsType<string>(_sut.MemberName);
+        }
+        [Fact]
         public void ShouldHaveLastLoginAsDateTime()
         {
             Assert.IsType<DateTime>(_sut.LastLogin);
