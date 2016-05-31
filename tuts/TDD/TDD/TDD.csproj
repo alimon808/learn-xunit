@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ReservationMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

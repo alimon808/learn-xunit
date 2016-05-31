@@ -13,10 +13,15 @@ namespace TDD.Tests.Controllers
     
     public class ReservationMessageTests
     {
+        public ReservationMessageTests()
+        {
+            SystemTime.Now = () => new DateTime(2009, 1, 1);
+        }
+
         [Fact]
         public void ShouldHavePickupDate()
         {
-            DateTime pickupDate = new DateTime(2018, 1, 1);
+            DateTime pickupDate = new DateTime(2009, 12, 31);
             var sut = new ReservationMessage(pickupDate);
 
             Assert.Equal(pickupDate, sut.PickupDate);
