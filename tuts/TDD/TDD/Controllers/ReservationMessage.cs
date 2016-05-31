@@ -10,6 +10,11 @@ namespace TDD.Controllers
     {
         public ReservationMessage(DateTime pickupDate)
         {
+            if (pickupDate < DateTime.Now)
+            {
+                throw new ArgumentException("Pickup date can't be in the past", "pickupDate");
+            }
+
             PickupDate = pickupDate;
         }
 

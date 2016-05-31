@@ -10,16 +10,27 @@ using Xunit;
 // - may include the registered customer's club number
 namespace TDD.Tests.Controllers
 {
+    
     public class ReservationMessageTests
     {
         [Fact]
         public void ShouldHavePickupDate()
         {
-            DateTime pickupDate = new DateTime(2010, 1, 1);
+            DateTime pickupDate = new DateTime(2018, 1, 1);
             var sut = new ReservationMessage(pickupDate);
 
             Assert.Equal(pickupDate, sut.PickupDate);
 
+        }
+
+        [Fact]
+        public void ShouldFailWhenPickupDateIsInThePast()
+        {
+            DateTime pickupDate = new DateTime(2001, 1, 1);
+
+            ArgumentException ex = Assert.Throws<ArgumentException>(() => new ReservationMessage(pickupDate));
+
+            Assert.Equal("pickupDate", ex.ParamName);
         }
     }
 }
